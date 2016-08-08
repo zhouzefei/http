@@ -7,13 +7,13 @@
 
 我们来看看具体的过程：
 <center>
-![Alt text](./1470139120102.png)
-![Alt text](./1470139200449.png)
+![Alt text](https://github.com/zhouzefei/http/blob/master/images/1.png)
+![Alt text](https://github.com/zhouzefei/http/blob/master/images/2.png)
 </center>
 
 #####应用层：
 应用层决定了向用户提供应用服务时通信的活动。如FTP(File Transfer Protocol,文件传输协议)和DNS(Domain Name System，域名系统)服务。HTTP协议也处于这一层。（https就是在http与tcp之间加了一个tls或者ssl的安全层）
-![Alt text](./1470326223308.png)
+![Alt text](https://github.com/zhouzefei/http/blob/master/images/3.png)
 
 
 ####补充一下：DNS查询
@@ -54,9 +54,8 @@ TCP会遇到同时为多个应用程序进程提供并发服务的问题，多�
 >请求报文和响应报文
 
 HTTP报文是简单的格式化数据块。由对报文描述的起始行，包含属性的首部，可选的、包含数据的主体。
-<center>![Alt text](./1469244836821.png)![Alt text](./1470326022159.png)
-![Alt text](./1470326349210.png)
-
+<center>![Alt text](https://github.com/zhouzefei/http/blob/master/images/3.png)
+![Alt text](https://github.com/zhouzefei/http/blob/master/images/4.png)
 </center>
 
 
@@ -64,7 +63,7 @@ HTTP报文是简单的格式化数据块。由对报文描述的起始行，包�
 首部：名/值对的列表
 实体：HTTP要传输的内容
 <center>
-![Alt text](./1470326114962.png)
+![Alt text](https://github.com/zhouzefei/http/blob/master/images/5.png)
 </center>
 ####常见状态码：
 1xx: 信息性状态码 100, 101
@@ -119,7 +118,7 @@ HTTP报文是简单的格式化数据块。由对报文描述的起始行，包�
 
 
 ####常见的首部（通用首部，请求首部，响应首部和实体首部）
-<center>![Alt text](./1470327843018.png)</center>
+<center>![Alt text](https://github.com/zhouzefei/http/blob/master/images/6.png)</center>
 
 #####通用首部：请求报文和响应报文都会使用。
 | 首部|描述|
@@ -136,23 +135,23 @@ HTTP报文是简单的格式化数据块。由对报文描述的起始行，包�
 
 #####1.Cache-Control
 请求：
-![Alt text](./1470328459939.png)![Alt text](./1470328557946.png)
+![Alt text](https://github.com/zhouzefei/http/blob/master/images/8.png)
 
 响应：
-![Alt text](./1470328598081.png)
+![Alt text](https://github.com/zhouzefei/http/blob/master/images/9.png)
 max-age=0
-![Alt text](./1470328957427.png)
+![Alt text](https://github.com/zhouzefei/http/blob/master/images/10.png)
 
 ####2.Trailer
 事先说明在报文主体后记录了哪些首部字段。在http1.1中分块传输编码。
-![Alt text](./1470329128565.png)
+![Alt text](https://github.com/zhouzefei/http/blob/master/images/11.png)
 
 ####3.upgrade
 检测HTTP协议与其它协议是否可使用更高的版本进行通信。
-![Alt text](./1470355305075.png)
+![Alt text](https://github.com/zhouzefei/http/blob/master/images/12.png)
 
 ####4.via
-![Alt text](./1470355468693.png)
+![Alt text](https://github.com/zhouzefei/http/blob/master/images/13.png)
 
 
 
@@ -183,36 +182,36 @@ max-age=0
 |TE|HTTP客户端程序的信息。与Accept-Encoding功能相似，但是用于传输编码，还可以伴随trailer字段的分块传输编码方式。如果用trailer时只需TE:trailers|
 
 1.Accept
-![Alt text](./1470355633242.png)
+![Alt text](https://github.com/zhouzefei/http/blob/master/images/14.png)
 q标示权重，0～1
 
 2.Authorization
-![Alt text](./1470355805977.png)
+![Alt text](https://github.com/zhouzefei/http/blob/master/images/15.png)
 
 3.Except
 告知服务器希望出现某种特定的行为，因为服务器无法理解客户端的期望就会报417，所以客户就先写明所期望的扩展
-![Alt text](./1470355897454.png)
+![Alt text](https://github.com/zhouzefei/http/blob/master/images/16.png)
 
 4.if-xxx称为条件请求
 * 只有if-match与etag匹配服务器才接受请求
-![Alt text](./1470356507254.png)
+![Alt text](https://github.com/zhouzefei/http/blob/master/images/17.png)
 
 ---
 * If-Modified-Since(304):
-<center>![Alt text](./1469255051523.png)![Alt text](./1469255017536.png)</center>
+<center>![Alt text](https://github.com/zhouzefei/http/blob/master/images/18.png)</center>
 
 ---
 * If-None-Match——ETag(304)
 与if-match相反,不一致表示有改动需要获取最新的资源
-<center>![Alt text](./1469258899869.png)![Alt text](./1469259101848.png)</center>
+<center>![Alt text](https://github.com/zhouzefei/http/blob/master/images/19.png)</center>
 
 ---
 * If-Range
-<center>![Alt text](./1470357097038.png)</center>
+<center>![Alt text](https://github.com/zhouzefei/http/blob/master/images/20.png)</center>
 
 5.Max-Forwards
 通过trace或options方法发送max－forwards，max－forwards值减1后不再进行转发，直接返回响应
-<center>![Alt text](./1470357501312.png)</center>
+<center>![Alt text](https://github.com/zhouzefei/http/blob/master/images/21.png)</center>
 
 
 #####响应报文首部：
@@ -231,9 +230,9 @@ q标示权重，0～1
 
 1.Age
 源服务器子啊多久前创建了响应。如果创建响应的是缓存服务器，Age就是指缓存后的响应再次发起认证完成的时间值。代理创建响应必须带Age
-![Alt text](./1470358468913.png)
+![Alt text](https://github.com/zhouzefei/http/blob/master/images/22.png)
 2.Vary
-![Alt text](./1470358853800.png)
+![Alt text](https://github.com/zhouzefei/http/blob/master/images/23.png)
 
 
 #####实体首部：包含在请求报文和响应报文中的实体部分所使用的首部，用于补充内容的更新时间与实体相关的信息
@@ -251,21 +250,21 @@ q标示权重，0～1
 |Last-Modified|资源最后修改日期时间|
 1.Allow
 405错误提示
-![Alt text](./1470359094082.png)
+![Alt text](https://github.com/zhouzefei/http/blob/master/images/24.png)
 
 2.Content-Length
 411错误无效长度
 实体长度，又表示传输长度。有了Transfer-Encoding，则不能有Content-Length。如果有Transfer-Encoding，则优先采用Transfer-Encoding里面的方法来找到对应的长度。使用Content-Length首部是为了能够检测出服务器崩溃而导致的报文截尾，并对共享持久连接的多个报文进行正确分段。
 
 3.Content-MD5
-![Alt text](./1470360727181.png)
+![Alt text](https://github.com/zhouzefei/http/blob/master/images/25.png)
 
 4.Content-Range
 字节
-![Alt text](./1470360837497.png)
+![Alt text](https://github.com/zhouzefei/http/blob/master/images/26.png)
 
 5.Content-Type
-![Alt text](./1470360881980.png)
+![Alt text](https://github.com/zhouzefei/http/blob/master/images/27.png)
 
 
 #####Cookie首部：
@@ -274,26 +273,22 @@ q标示权重，0～1
 |Cookie|服务器接收到Cookie|
 |Set-Cookie|开始状态管理使用的Cookie|
 
-![Alt text](./1470361026751.png)
-![Alt text](./1470361042950.png)
+![Alt text](https://github.com/zhouzefei/http/blob/master/images/28.png)
+![Alt text](https://github.com/zhouzefei/http/blob/master/images/29.png)
 
 
-
-
-![Alt text](./1470377981501.png)
-![Alt text](./1470377988307.png)
 
 <br/>
 >代理
 
 ####正向代理
 位于客户端和原始服务器之间的服务器，为了从原始服务器取得内容，客户端向代理发送一个请求<font color="#f00">并指定目标</font>，然后代理向原始服务器转交请求并将获得的内容返回客户端。
-![Alt text](./1470327506521.png)
+![Alt text](https://github.com/zhouzefei/http/blob/master/images/30.png)
 
 使用场景1：我访问不了谷歌，但是我能访问一个代理服务器，这个代理服务器能访问到谷歌
 
 使用场景2：我要在本地发起一个http请求，域名是www.maihaoche.com。
-![Alt text](./1470296011458.png)
+![Alt text](https://github.com/zhouzefei/http/blob/master/images/31.png)
 
 VPN网关通过对数据包的加密和数据包目标地址的转换实现远程访问。
 
@@ -309,17 +304,17 @@ CDN的基本思路是尽可能避开互联网上有可能影响数据传输速�
 ####实用场景描述：
 node前后端分离方案：
 #####只做静态资源服务器
-<center>![Alt text](./1470304569089.png)</center>
+<center>![Alt text](https://github.com/zhouzefei/http/blob/master/images/32.png)</center>
 
 #####node需要对java返回的数据做处理
-<center>![Alt text](./1470304577411.png)</center>
+<center>![Alt text](https://github.com/zhouzefei/http/blob/master/images/33.png)</center>
 <br/>
 >解决HTTP的无状态问题
 
-![Alt text](./1470325410106.png)
+![Alt text](https://github.com/zhouzefei/http/blob/master/images/34.png)
 
 当程序为某个客户端的请求创建session时会先检查这个客户端是否已包含一个session id，如果已经包含，就根据sessionid将session检索出来。如果不包含则为客户端创建一个session并且生成一个关联的session id，然后将sessionid在响应中返回给客户端。
-<center>![Alt text](./1469418225642.png)图六</center>
+<center>![Alt text](https://github.com/zhouzefei/http/blob/master/images/37.png)图六</center>
 1. 通过cookies保存
 服务器将生成的唯一的sessionid通过set-cookie返回给客户端，在客户端发起新的请求时，在cookie中将携带这个sessionid，这样服务器就能找到客户端对应的session。图六
 2. 通过URL回写实现
@@ -328,40 +323,7 @@ node前后端分离方案：
 4. url参数
 <br/>
 
->性能优化
 
-<center>![Alt text](./1469166594134.png)</center>
-<center>图五:串行http事务的时间线</center>
-######HTTP事物时延主要原因：
-1. 将uri中的主机转成ip，数十秒
-2. 发送tcp连接请求，等待回送请求接受，1、2s，数量级增长。
-3. 传输请求及服务器处理请求报文时间
-4. 服务器回送响应
-
-######解决方案：
-1. DNS优化——缓存。
-* 浏览器dns缓存
-* 系统dns缓存
-* hosts文件
-* 各个dns服务器上的缓存。
-* dns预取
-
----
-2. TCP优化。
-<center>![Alt text](./1469177707967.png)</center>
-* 并行连接：通过多条tcp连接发起并发的http请求（让用户感觉快，容易耗尽带宽，每个对象都去竞争有限的带宽。不过服务器使用并行连接病将连接总数限制为4个）
-* 持久连接：重用tcp连接，以消除连接及关闭时延（http1.1以及1.0加强版）允许事务结束后仍保持打开状态keep-alive。小心谨用，会积累大量的空闲连接 （p126）
-* 管道化连接：共享tcp连接发起并发的http请求
-* 复用连接：交替传送请求和响应报文
-
----
-3. HTTP传输优化——缓存。
-* PageCache，直接在内存缓存了现有网页的dom结构和渲染结果。所以点击前进后退时很快。
-* HTTP Cache文件级别的Cache存在本地的文件系统上按照RFC2616实现。
-* 代理Cache如果通过代理服务器上网，代理服务器也按缓存标准。
-* CDN(静态数据)一个地理上离你很近的内容服务器。
-* DMOC(动态数据)针对网页中动态数据查库，通常服务器外围包一层内存缓存服务器，专门缓存数据库中的对象。
-* gzip压缩
 * 未来协议spdy：一个tcp上并行多个http减少建立时间，请求优先级，http头部压缩，服务器主动推送对象
 * Server push/hint 服务器主动推送对象（可以想象成服务器帮客户端预取）
 	
